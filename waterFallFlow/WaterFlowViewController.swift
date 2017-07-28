@@ -9,7 +9,7 @@
 import UIKit
 
 private let reuseIdentifier = "Cell"
-
+private let reuseHeaderIdentifier = "Header"
 class WaterFlowViewController: UICollectionViewController, WaterFlowViewLayoutDelegate {
 
     let layout = WaterFlowViewLayout()
@@ -30,8 +30,18 @@ class WaterFlowViewController: UICollectionViewController, WaterFlowViewLayoutDe
         self.collectionView?.backgroundColor = UIColor.white
         let nib = UINib(nibName: "WaterFlowCollectionViewCell", bundle: nil)
         self.collectionView?.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView?.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: reuseHeaderIdentifier)
         layout.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionElementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseHeaderIdentifier, for: indexPath) as! HeaderView
+            header.headLabel?.text = "第\(indexPath.section)组头部"
+            return header
+        }
+        return UICollectionReusableView()
     }
 
     func waterFlowViewLayout(waterFlowViewLayout: WaterFlowViewLayout, heightForWidth: CGFloat, atIndexPath: IndexPath) -> CGFloat {

@@ -20,6 +20,7 @@ class WaterFlowViewLayout: UICollectionViewLayout {
     
     static var margin: CGFloat = 8
     
+    var headerViewHeight: CGFloat = 40
     var sectionInsert = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
     var columnMargin: CGFloat = margin
     var rowMargin: CGFloat = margin
@@ -73,7 +74,7 @@ class WaterFlowViewLayout: UICollectionViewLayout {
         let x = sectionInsert.left + CGFloat(minYColumn) * (columnWidth + columnMargin)
         let y: CGFloat
         if maxYDict[minYColumn] == 0 {
-            y = sectionInsert.top
+            y = sectionInsert.top + headerViewHeight + rowMargin
         } else {
             y = maxYDict[minYColumn]! + rowMargin
         }
@@ -84,6 +85,24 @@ class WaterFlowViewLayout: UICollectionViewLayout {
         return layoutAttr
     }
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        let indexPath = IndexPath(item: 0, section: 0)
+        let attr = self.layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: indexPath)
+        layoutAttributes.append(attr!)
         return layoutAttributes
     }
+    override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: elementKind, with: indexPath)
+        
+        if elementKind == UICollectionElementKindSectionHeader {
+            
+            let width = self.collectionView?.bounds.size.width
+            let height: CGFloat = 40
+            
+            let y: CGFloat =  sectionInsert.top
+            attributes.frame = CGRect(x: 0, y: y, width: width!, height: height)
+        }
+        
+        return attributes
+    }
+    
 }

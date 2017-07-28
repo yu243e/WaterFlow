@@ -17,6 +17,7 @@
 		3C0983611F2773E900CDC6C6 /* WaterFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0983601F2773E900CDC6C6 /* WaterFlowViewController.swift */; };
 		3C0983641F286E5300CDC6C6 /* WaterFlowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0983631F286E5300CDC6C6 /* WaterFlowCollectionViewCell.swift */; };
 		3C0983661F286E7600CDC6C6 /* WaterFlowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0983651F286E7600CDC6C6 /* WaterFlowCollectionViewCell.xib */; };
+		3C09836A1F29E42E00CDC6C6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0983691F29E42E00CDC6C6 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3C0983601F2773E900CDC6C6 /* WaterFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFlowViewController.swift; sourceTree = "<group>"; };
 		3C0983631F286E5300CDC6C6 /* WaterFlowCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFlowCollectionViewCell.swift; sourceTree = "<group>"; };
 		3C0983651F286E7600CDC6C6 /* WaterFlowCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterFlowCollectionViewCell.xib; sourceTree = "<group>"; };
+		3C0983691F29E42E00CDC6C6 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				3C09835B1F27135400CDC6C6 /* extensionUIColor.swift */,
 				3C09835E1F27168500CDC6C6 /* WaterFlowViewLayout.swift */,
 				3C0983601F2773E900CDC6C6 /* WaterFlowViewController.swift */,
+				3C0983691F29E42E00CDC6C6 /* HeaderView.swift */,
 				3C0983631F286E5300CDC6C6 /* WaterFlowCollectionViewCell.swift */,
 				3C0983651F286E7600CDC6C6 /* WaterFlowCollectionViewCell.xib */,
 				3C09834B1F26F9A600CDC6C6 /* ViewController.swift */,
@@ -159,6 +162,7 @@
 				3C09835C1F27135400CDC6C6 /* extensionUIColor.swift in Sources */,
 				3C09834C1F26F9A600CDC6C6 /* ViewController.swift in Sources */,
 				3C09834A1F26F9A600CDC6C6 /* AppDelegate.swift in Sources */,
+				3C09836A1F29E42E00CDC6C6 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
